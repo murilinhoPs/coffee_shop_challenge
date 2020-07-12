@@ -77,11 +77,12 @@ class _BodyState extends State<Body> {
   }
 
   Widget _productCard({int index, ProductsList products}) => InkWell(
+        splashColor: widget.appColors.lightBrown,
         onTap: () => Navigator.pushNamed(context, "/details",
             arguments: products.product[index]),
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: 15.0),
-          width: 320,
+          width: 280,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               color: widget.appColors.lightOrange),
@@ -102,7 +103,7 @@ class _BodyState extends State<Body> {
                 bottom: 0,
                 child: Container(
                   height: 270,
-                  width: 320,
+                  width: 280,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(

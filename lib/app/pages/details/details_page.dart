@@ -13,8 +13,13 @@ class DetailsPage extends StatefulWidget {
 class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(widget.productDetails.title),
+    return Scaffold(
+      body: Center(
+        child: Text(
+          widget.productDetails.title,
+          style: Theme.of(context).textTheme.headline2,
+        ),
+      ),
     );
   }
 }

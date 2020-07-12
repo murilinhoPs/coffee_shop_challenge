@@ -32,9 +32,8 @@ class BottomBar extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: bottomBarItems.length,
         itemBuilder: (context, index) => GestureDetector(
-          onTap: () {
-            productsController.filterListStates(bottomBarItems[index]);
-          },
+          onTap: () =>
+              productsController.filterListStates(bottomBarItems[index]),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(

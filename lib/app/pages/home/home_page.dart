@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'components/body.dart';
+import 'home_controller.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -18,18 +19,25 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     final appColors = Provider.of<AppColors>(context);
 
-    return Scaffold(
-      backgroundColor: appColors.backgroundBlue,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80.0),
-        child: SafeArea(child: CustomAppBar(appColors: appColors)),
-      ),
-      body: Body(
-        appColors: appColors,
-      ),
-      bottomNavigationBar: BottomBar(
-        bottomBarItems: bottomBarItems,
-        appColors: appColors,
+    return MultiProvider(
+      providers: [
+        Provider<HomeController>(
+          create: (_) => HomeController(),
+        ),
+      ],
+      child: Scaffold(
+        backgroundColor: appColors.backgroundBlue,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(80.0),
+          child: SafeArea(child: CustomAppBar(appColors: appColors)),
+        ),
+        body: Body(
+          appColors: appColors,
+        ),
+        bottomNavigationBar: BottomBar(
+          bottomBarItems: bottomBarItems,
+          appColors: appColors,
+        ),
       ),
     );
   }

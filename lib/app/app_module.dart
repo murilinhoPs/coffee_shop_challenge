@@ -10,9 +10,6 @@ class AppModule extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        Provider<HomeController>(
-          create: (_) => HomeController(),
-        ),
         Provider<AppColors>(
           create: (_) => AppColors(),
         ),
