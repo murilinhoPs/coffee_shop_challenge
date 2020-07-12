@@ -1,0 +1,7 @@
+Lista Json com os produtos.ok
+Colocar essa lista json que ele retorna no estado do Home.
+a partir daí, criar um observable que retorna apenas a lista ok
+Criar uma action que filtra a lista de acordo com os parâmetros que definir (titulo, preço...)
+Essa action altera o observable que rebuilda a lista
+Criar outra action que retorna a lista sem filtrar
+Criar um gesture detector de atualizar a página e pegar os dados normais 
